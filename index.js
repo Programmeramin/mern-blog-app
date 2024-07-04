@@ -1,6 +1,7 @@
 import express from "express"
 import colors from "colors"
 import dotenv from "dotenv"
+import { MongoDBConnect } from "./configs/MongoDB.js";
 
 
 // init express
@@ -18,4 +19,5 @@ app.use(express.urlencoded({extended : false}));
 // server listen
 app.listen(PORT, () =>{
     console.log(`Server is running on PORT ${PORT}`.bgBlue.white);
+    MongoDBConnect()
 });
