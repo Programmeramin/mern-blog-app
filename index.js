@@ -3,6 +3,7 @@ import colors from "colors"
 import dotenv from "dotenv"
 import { MongoDBConnect } from "./configs/MongoDB.js";
 import userRouter from "./route/auth.js"
+import errorHandler from "./middleware/errorHandler.js";
 
 
 // init express
@@ -19,6 +20,9 @@ app.use(express.urlencoded({extended : false}));
 
 // route
 app.use("/api/auth/", userRouter);
+
+// error handler
+app.use(errorHandler);
 
 // server listen
 app.listen(PORT, () =>{
