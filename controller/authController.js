@@ -1,9 +1,12 @@
 import asyncHandler from "express-async-handler"
 import User from "../models/User.js";  
 import bcrypt from "bcrypt"
+
+
+
 /**
  * @description user signup
- * @route api/v1/user/signup
+ * @route api/v1/auth/signup
  * @method POST
  * @access PUBLIC  
  */
@@ -32,3 +35,12 @@ export const userSignup = asyncHandler( async(req, res) =>{
   res.status(200).json({message : "signup successful"})
 
 }) 
+
+
+
+/**
+ * @description user signin
+ * @route api/auth/signup
+ * @method POST
+ * @access PUBLIC  
+ */
