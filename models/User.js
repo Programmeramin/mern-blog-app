@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import { type } from "os";
-import { boolean } from "webidl-conversions";
 
 
 const UserSchema = new mongoose.Schema({
@@ -19,17 +17,17 @@ const UserSchema = new mongoose.Schema({
 
     password : {
         type : String,
-        required : true ,
+        required : true,
         unique : true,
     },
 
     status : {
-        type : boolean,
+        type : Boolean,
         default : true
     },
 
     trush : {
-        type : boolean,
+        type : Boolean,
         default : false
     },
 

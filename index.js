@@ -2,6 +2,7 @@ import express from "express"
 import colors from "colors"
 import dotenv from "dotenv"
 import { MongoDBConnect } from "./configs/MongoDB.js";
+import userRouter from "./route/auth.js"
 
 
 // init express
@@ -16,8 +17,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended : false}));
 
 
+// route
+app.use("/api/auth/", userRouter);
+
 // server listen
 app.listen(PORT, () =>{
     console.log(`Server is running on PORT ${PORT}`.bgBlue.white);
     MongoDBConnect()
-});
+});     
