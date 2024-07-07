@@ -21,6 +21,7 @@ app.use(express.urlencoded({extended : false}));
 // route
 app.use("/api/auth/", userRouter);
 
+
 // error handler
 app.use(errorHandler);
 
