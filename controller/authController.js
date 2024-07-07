@@ -16,7 +16,7 @@ import JWT from 'jsonwebtoken'
 export const userSignup = asyncHandler( async(req, res) =>{
  
     const {username, email , password} = req.body;
-
+    
     // validation
     if(!username || !email || !password || !username === "" || !email === "" || !password === ""){
         return res.status(400).json({message : "All fields are required"})
